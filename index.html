@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Click Timing Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+
+<body>
+
+    <!-- MENU PRINCIPAL -->
+    <div id="mainMenu">
+        <h1>Click Timing Master</h1>
+
+        <button class="menuBtn" id="playBtn">JOGAR</button>
+        <button class="menuBtn" id="helpBtn">AJUDA</button>
+        <button class="menuBtn" id="settingsBtn">DEFINIÇÕES</button>
+        <button class="menuBtn" id="aboutBtn">SOBRE NÓS</button>
+    </div>
+
+    <!-- AJUDA -->
+    <div class="overlay" id="helpOverlay">
+        <h2>Como Jogar</h2>
+        <p>Clica quando a barra estiver dentro da zona amarela.</p>
+        <button onclick="closeOverlay()">Voltar</button>
+    </div>
+
+    <!-- DEFINIÇÕES -->
+    <div class="overlay" id="settingsOverlay">
+        <h2>Definições</h2>
+        <label>Volume:</label>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.1">
+        <button onclick="closeOverlay()">Voltar</button>
+    </div>
+
+    <!-- SOBRE -->
+    <div class="overlay" id="aboutOverlay">
+        <h2>Sobre Nós</h2>
+        <p>Fundador do jogo: Nerd Em Anime</p>
+        <p>Desenvolvedor Angolano 🇦🇴</p>
+        <button onclick="closeOverlay()">Voltar</button>
+    </div>
+
+    <!-- JOGO -->
+    <div id="gameContainer" style="display:none;">
+
+        <h1>Click Timing Master</h1>
+        <p id="score">Score: 0</p>
+        <p id="highscore">Record: 0</p>
+
+        <div id="startScreen">
+            <h2>Clica para começar</h2>
+            <button id="startBtn">JOGAR</button>
+        </div>
+
+        <!-- PAUSE MENU COMPLETO -->
+        <div id="pauseOverlay" style="display:none;">
+            <h2>Jogo em Pausa</h2>
+
+            <button id="resumeBtn">▶ Continuar</button>
+            <button id="restartBtn">🔄 Reiniciar</button>
+            <button id="exitBtn">🚪 Sair para Menu</button>
+        </div>
+
+        <button id="pauseBtn">PAUSE (ESC)</button>
+
+        <div id="gameArea">
+            <div id="bar"></div>
+            <div id="target"></div>
+        </div>
+
+        <div id="gameOverOverlay" style="display:none;">
+            <h2>Game Over</h2>
+            <p id="finalScore"></p>
+            <button id="retryBtn">Jogar Novamente</button>
+        </div>
+
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
